@@ -1,3 +1,4 @@
+''' Question 0: Calculate the length of a visit '''
 def visit_length(visit):
     '''
     Returns the length of a person's visit in the format: (hours, minutes).
@@ -16,7 +17,8 @@ def visit_length(visit):
         
         else: 
             return None
-
+        
+''' Question 1: Determine whether two visits overlapped '''
 def contact_event(visit_a, visit_b):
     '''
     Calculates whether two valid visits overlap.
@@ -65,6 +67,7 @@ def contact_event(visit_a, visit_b):
     else:
         return None
 
+''' Question 2: Determine whether two individuals were in contact '''
 def potential_contacts(person_a, person_b):
     '''
     Returns contact hours and locations between two people and
@@ -146,6 +149,7 @@ def potential_contacts(person_a, person_b):
     contact = (overlap_set, total_formatted)
     return contact
 
+''' Question 3: Forward contact tracing '''
 def forward_contact_trace(visits, index, day_time, second_order=False):
     '''
     Returns an alphabetically sorted list of first order contacts in the event
@@ -225,74 +229,8 @@ def second_order_contacts(first_contacts, visits, index):
                 all_contacts.append(second_trace[x])
     from reference import potential_contacts
 
-def backward_contact_trace(visits, index, day_time, window):
-    '''
-    Returns an alphabetically sorted list of backward contact traces in order
-    to find potential sources of infection.
-    '''
-    # Firstly, initialise variables
-    visits_dict = {}
-    visits_in_window = []
-    backward_contacts = []
-    # Give names to values in day_time to make code more readable
-    index_date = day_time[0]
-    index_hour = day_time[1]
-    index_min = day_time[2]
-    index_time = index_hour * 60 + index_min
-    
-    # Create a dictionary of visits with each person as the key
-    for visit in range(len(visits)):
-        person_index = visits[visit][0]
-        if person_index in visits_dict:
-            visits_dict[person_index].append(visits[visit])
-        else: 
-            visits_dict[person_index] = [visits[visit]]
-    
-    # Remove the visits of the detected case as will interfere later
-    if index in visits_dict:
-        visits_dict.pop(index)
-    
-    # Thirdly, we need to find visits made by the infected person in
-    # each day of the window
-    for day in range(index_date + 1 - window, index_date + 1):
-        for visit in range(len(visits)):
-            # Initialise variables in the same format as before
-            visit_person = visits[visit][0]
-            visit_date = visits[visit][2]
-            visit_hour = visits[visit][3]
-            visit_min = visits[visit][4]
-            visit_time = visit_hour * 60 + visit_min
-            if index == visit_person:
-                # Store list of visits that took place on the same day BEFORE
-                # the infection
-                if index_date == visit_date and visit_time <= index_time:
-                    if visits[visit] not in visits_in_window:
-                        visits_in_window.append(visits[visit])
-                # Also add visits on the previous days in the window
-                if day == visit_date:
-                    if visits[visit] not in visits_in_window:
-                        visits_in_window.append(visits[visit])
 
-    # Lastly, test the index's visits against those in the dictionary
-    # to find potential backward contacts/sources of infection
-    for name in visits_dict:
-        if name != index:
-            # Test each visit in the dictionary to see if there is a 
-            # potential contact with index visits in the set window
-            for entry in range(len(visits_dict[name])):
-                test_infection = [visits_dict[name][entry]]
-                if potential_contacts(visits_in_window, test_infection)[0]:
-                    backward_contacts.append(name)
-
-    return sorted(backward_contacts)
-    # Add first contacts to output and convert to set to remove
-    # any potential duplicate names
-    if first_contacts:
-        all_contacts += first_contacts.keys()
-        all_contacts = list(set(all_contacts))
-    
-    return sorted(all_contacts)
-
+''' Question 4: Backward contact tracing '''
 def backward_contact_trace(visits, index, day_time, window):
     '''
     Returns an alphabetically sorted list of backward contact traces in order
