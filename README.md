@@ -33,40 +33,27 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+<summary>Table of Contents</summary>
+  
+- [1. About The Project](#1-about-the-project)
+- [2. Project Description](#2-project-description)
+  * [Background](#background)
+  * [Project Questions](#project-questions)
+  * [QR Data](#qr-data)
+- [3. Function Descriptions](#3-function-descriptions)
+  * [Question 0: Calculate the length of a visit](#question-0-calculate-the-length-of-a-visit)
+  * [Question 1: Determine whether two visits overlapped](#question-1-determine-whether-two-visits-overlapped)
+  * [Question 2: Determine whether two individuals were in contact](#question-2-determine-whether-two-individuals-were-in-contact)
+  * [Question 3: Forward contact tracing](#question-3-forward-contact-tracing)
+  * [Question 4: Backward contact tracing](#question-4-backward-contact-tracing)
+  
 </details>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## 1. About The Project
 This was the first project for COMP10001 (Foundations of Computing) at the University of Melbourne. Descriptions for various functions were provided via Grok Learning and checked against various inputs. The <a href="#project-description">Project Description</a> and <a href="#function-descriptions">Function Descriptions</a> will be below. <b> Final mark: 96% </b>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- GETTING STARTED -->
 ## 2. Project Description
 ### Background
 Contact tracing is an important measure used to control outbreaks of infectious diseases such as COVID-19.
@@ -119,6 +106,7 @@ In this project, you may always assume that these 7-tuples are correctly formatt
 
 You may assume that all visits are syntactically valid and that no visits for a single person are overlapping in time, although a successive visits may end and start at the same time
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ## 3. Function Descriptions
@@ -393,6 +381,8 @@ Assumptions:
 
 <ul><li>You can assume that the input arguments are syntactically correct given the definitions and assumptions on this slide and on previous slides.</li>
 <li>You are provided with a correct reference version of the function potential_contacts(person_a, person_b) from Question 3.</li></ul>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
