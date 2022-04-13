@@ -50,7 +50,7 @@
 </details>
 
 ## 1. About The Project
-This was the first project for COMP10001 (Foundations of Computing) at the University of Melbourne. Descriptions for various functions were provided via Grok Learning and checked against various inputs. The <a href="#project-description">Project Description</a> and <a href="#function-descriptions">Function Descriptions</a> will be below. <b> Final mark: 96% </b>
+This was the first project for COMP10001 (Foundations of Computing) at the University of Melbourne. Descriptions for various functions were provided via Grok Learning and checked against various inputs. The <a href="#2-project-description">Project Description</a> and <a href="#3-function-descriptions">Function Descriptions</a> will be below. <b> Final mark: 96% </b>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
